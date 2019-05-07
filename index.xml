@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 May 2019 16:13:56 +0800</pubDate>
       
       <guid>https://imagefish.github.io/post/linux/</guid>
-      <description>Mount the disk parts autoly when starting the system sudo fdisk -l List the available disk parts  sudo blkid List the UUID of each disk parts  df -h check the used and free space of each disk parts  vim /etc/fstab UUID= &amp;lt;empty mount folder&amp;gt; &amp;lt;file system type&amp;gt; &amp;lt;option (defaults)&amp;gt; 0 0  mount -a check the the commands in fstab is correct or not.  Install the NVIDIA Gragh Card Driver Add the nouveau In /etc/modprobe.</description>
+      <description>Mount the disk parts automatically when starting the system sudo fdisk -l List the available disk parts  sudo blkid List the UUID of each disk parts  df -h check the used and free space of each disk parts  vim /etc/fstab UUID= &amp;lt;empty mount folder&amp;gt; &amp;lt;file system type&amp;gt; &amp;lt;option (defaults)&amp;gt; 0 0  mount -a check the the commands in fstab is correct or not.  Install the NVIDIA Gragh Card Driver Add the nouveau In /etc/modprobe.</description>
     </item>
     
     <item>
