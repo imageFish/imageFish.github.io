@@ -3,17 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://imageFish.github.io/categories/</loc>
+    <loc>https://imagefish.github.io/post/first/</loc>
+    <lastmod>2019-05-07T15:46:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imagefish.github.io/post/</loc>
+    <lastmod>2019-05-07T15:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://imageFish.github.io/</loc>
+    <loc>https://imagefish.github.io/</loc>
+    <lastmod>2019-05-07T15:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://imageFish.github.io/tags/</loc>
+    <loc>https://imagefish.github.io/about/</loc>
+    <lastmod>2019-05-07T15:22:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://imagefish.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://imagefish.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
