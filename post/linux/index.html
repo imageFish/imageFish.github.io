@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux // imageFish GithubIO</title>
+
+        <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+        <meta property="og:title" content="Linux" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://imagefish.github.io/post/linux/" />
+    
+
+    <link href="" rel="alternate" type="application/rss+xml" title="imageFish GithubIO" />
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link href="https://imagefish.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://imagefish.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://imagefish.github.io/css/style.css">
+
+    <meta name="generator" content="Hugo 0.55.5" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://imagefish.github.io/">imageFish GithubIO</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Linux</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/post/linux/" class="article-date">
+                <time datetime='2019-05-07T16:13:56.000&#43;08:00' itemprop="datePublished">2019-05-07</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="mount-the-disk-parts-autoly-when-starting-the-system">Mount the disk parts autoly when starting the system</h1>
+
+<h2 id="sudo-fdisk-l">sudo fdisk -l</h2>
+
+<pre><code>List the available disk parts 
+</code></pre>
+
+<h2 id="sudo-blkid">sudo blkid</h2>
+
+<pre><code>List the UUID of each disk parts
+</code></pre>
+
+<h2 id="df-h">df -h</h2>
+
+<pre><code>check the used and free space of each disk parts
+</code></pre>
+
+<h2 id="vim-etc-fstab">vim /etc/fstab</h2>
+
+<pre><code>UUID= &lt;empty mount folder&gt; &lt;file system type&gt; &lt;option (defaults)&gt; 0 0
+</code></pre>
+
+<p><img src="../../static/fstab.png" alt="" /></p>
+
+<h2 id="mount-a">mount -a</h2>
+
+<pre><code>check the the commands in fstab is correct or not.
+</code></pre>
+
+<h1 id="install-the-nvidia-gragh-card-driver">Install the NVIDIA Gragh Card Driver</h1>
+
+<h2 id="add-the-nouveau">Add the nouveau</h2>
+
+<p>In /etc/modprobe.d/blacklist.conf, add the following command</p>
+
+<pre><code>blacklist nouveau
+options nouveau modeset=0
+</code></pre>
+
+<h2 id="update-the-core">Update the core</h2>
+
+<pre><code>sudo update-initramfs -u
+</code></pre>
+
+<h2 id="reboot-your-system">Reboot your system</h2>
+
+<p>use the following command to confirm the nouvear module is prohibited.</p>
+
+<pre><code>lsmod | grep nouveau
+</code></pre>
+
+<h2 id="install-the-drivers">Install the Drivers</h2>
+
+<pre><code>sudo service lightdm stop
+sudo ./NVIDIA-*.run -no-openfl-files
+</code></pre>
+
+<h1 id="exchange-cuda-versions">Exchange CUDA versions</h1>
+
+<h2 id="modify-bashrc-to-enable-nvcc">Modify .bashrc to enable nvcc</h2>
+
+<pre><code>export CUDA_HOME=/usr/local/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64/:$LD_LIBRARY_PATH
+</code></pre>
+
+<h2 id="in-a-command-windows-modify-the-environment-varibles-temporarily">In a command windows, modify the environment varibles temporarily</h2>
+
+<pre><code>export CUDA_HOME=&lt;a special cuda version (example: /usr/local/cuda8.0)&gt;
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64/:$LD_LIBRARY_PATH
+</code></pre>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#mount-the-disk-parts-autoly-when-starting-the-system">Mount the disk parts autoly when starting the system</a>
+<ul>
+<li><a href="#sudo-fdisk-l">sudo fdisk -l</a></li>
+<li><a href="#sudo-blkid">sudo blkid</a></li>
+<li><a href="#df-h">df -h</a></li>
+<li><a href="#vim-etc-fstab">vim /etc/fstab</a></li>
+<li><a href="#mount-a">mount -a</a></li>
+</ul></li>
+<li><a href="#install-the-nvidia-gragh-card-driver">Install the NVIDIA Gragh Card Driver</a>
+<ul>
+<li><a href="#add-the-nouveau">Add the nouveau</a></li>
+<li><a href="#update-the-core">Update the core</a></li>
+<li><a href="#reboot-your-system">Reboot your system</a></li>
+<li><a href="#install-the-drivers">Install the Drivers</a></li>
+</ul></li>
+<li><a href="#exchange-cuda-versions">Exchange CUDA versions</a>
+<ul>
+<li><a href="#modify-bashrc-to-enable-nvcc">Modify .bashrc to enable nvcc</a></li>
+<li><a href="#in-a-command-windows-modify-the-environment-varibles-temporarily">In a command windows, modify the environment varibles temporarily</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+    </div>
+    <nav id="article-nav">
+    
+    
+    <a href="/post/first/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">First&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 imageFish GithubIO
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
