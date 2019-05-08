@@ -15,9 +15,45 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://imagefish.github.io/post/linux/" />
     
+    <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 
     <link href="" rel="alternate" type="application/rss+xml" title="imageFish GithubIO" />
     <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="/katex/katex.min.css"/>
 
     <link href="https://imagefish.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
     <link href="https://imagefish.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
@@ -142,11 +178,11 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64/:$LD_LIBRARY_PATH
 
 <h2 id="uefi">UEFI:</h2>
 
-<p>There must be an EFI partition to enable UEFI boot mod, and BIOS partition is also necessary for both UEFI and BIOS. It&rsquo;s not sure that the $/boot$ partition is essential or not.</p>
+<p>There must be an EFI partition to enable UEFI boot mod, and BIOS partition is also necessary for both UEFI and BIOS. It's not sure that the $/boot$ partition is essential or not.</p>
 
 <h2 id="bios">BIOS:</h2>
 
-<p>If use BIOS boot mod, the $/boot$ partition is necessary. For convenience, it&rsquo;s better to make the $BIOS$ partition.</p>
+<p>If use BIOS boot mod, the $/boot$ partition is necessary. For convenience, it's better to make the $BIOS$ partition.</p>
 
         </div>
 

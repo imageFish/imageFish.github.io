@@ -30,6 +30,11 @@
   </url>
   
   <url>
+    <loc>https://imagefish.github.io/post/linux/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://imagefish.github.io/categories/</loc>
     <priority>0</priority>
   </url>

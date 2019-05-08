@@ -38,5 +38,14 @@
       <description> Hello Github  aaa bbb  </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://imagefish.github.io/post/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imagefish.github.io/post/linux/</guid>
+      <description>Mount the disk parts automatically when starting the system  .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }   body { font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe WPC&#39;, &#39;Segoe UI&#39;, &#39;Ubuntu&#39;, &#39;Droid Sans&#39;, sans-serif; font-size: 14px; line-height: 1.6; }      title: &amp;quot;Linux&amp;quot; date: 2019-05-07T16:13:56+08:00 Mount the disk parts automatically when starting the system sudo fdisk -l List the available disk parts  sudo blkid List the UUID of each disk parts  df -h check the used and free space of each disk parts  vim /etc/fstab UUID= &amp;lt;empty mount folder&amp;gt; &amp;lt;file system type&amp;gt; &amp;lt;option (defaults)&amp;gt; 0 0  mount -a check the the commands in fstab is correct or not.</description>
+    </item>
+    
   </channel>
 </rss>
