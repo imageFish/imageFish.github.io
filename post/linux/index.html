@@ -138,6 +138,16 @@ export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64/:$LD_LIBRARY_PATH
 </code></pre>
 
+<h1 id="linux-installation">Linux Installation</h1>
+
+<h2 id="uefi">UEFI:</h2>
+
+<p>There must be an EFI partition to enable UEFI boot mod, and BIOS partition is also necessary for both UEFI and BIOS. It&rsquo;s not sure that the $/boot$ partition is essential or not.</p>
+
+<h2 id="bios">BIOS:</h2>
+
+<p>If use BIOS boot mod, the $/boot$ partition is necessary. For convenience, it&rsquo;s better to make the $BIOS$ partition.</p>
+
         </div>
 
         
@@ -165,6 +175,11 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64/:$LD_LIBRARY_PATH
 <ul>
 <li><a href="#modify-bashrc-to-enable-nvcc">Modify .bashrc to enable nvcc</a></li>
 <li><a href="#in-a-command-windows-modify-the-environment-varibles-temporarily">In a command windows, modify the environment varibles temporarily</a></li>
+</ul></li>
+<li><a href="#linux-installation">Linux Installation</a>
+<ul>
+<li><a href="#uefi">UEFI:</a></li>
+<li><a href="#bios">BIOS:</a></li>
 </ul></li>
 </ul>
 </nav>
